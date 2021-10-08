@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apps</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            var state = false;
+            $(".form-item").dblclick(function(){
+
+                if(state == false){
+
+                    $(".form-item").addClass("animationClose");
+                    $(".close").css({
+                        display:"flex"
+                    });
+                    state = true;
+
+                }else{
+
+                    $(".form-item").removeClass("animationClose");
+                    $(".close").css({
+                        display:"none"
+                    });
+                    state =false;
+                }
+                
+                
+            });
+
+
+            $(".close").click(function(){
+
+                var parent =  $(this).parent();
+
+                $(parent).fadeOut();
+
+                $("#form").animate({
+
+                    width:"-=120px"
+                });
+
+            });
+
+        });
+
+
+    </script>
+    <style>
+
+        body{
+            margin:0px;
+        }
+        #contenido{
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg,rgb(47, 44, 218),red);
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #form{
+            width: 500px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.377);;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: 1;;
+            overflow: hidden;
+            padding: 20px;
+            -webkit-transition:all .5s ease:
+            
+        }  
+        .form-item{
+            width: 100px;
+            height: 100px;
+            background-position: center;
+            background-size: contain;
+            margin-right: 10px;
+            margin-left:10px;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            border-radius: 15px;
+            position: relative;
+            
+            /**/
+            
+        }
+        .animationClose{
+            animation: temble var(--i) ease infinite;
+        }
+        
+        .faceIcon{
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/768px-Facebook_icon_2013.svg.png);
+
+        }
+        .youtubeIcon{
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAe1BMVEXlLSf////kEAD52NjzrqzkGhHkHRTxoZ/kJB3jAADkIhvlJyHrcG3//PzlKiTkGA72w8L98PDoUU386+r40M/75eXmOjX40dD74N/xnZvnQTz3yMframfmMSvqZmL1uLboSkXwk5DpWlfte3juhoT0s7LqX1znR0LpVVFkHxCVAAACzUlEQVR4nO3c6XKbMBRAYaQEzBbhYJt6je1mad//CQvuz860ZdG9iDnfA2TmjD2OJLiKIgAAAAAAAAAAAAAAAAAAAAAAAAAAAABLkyaV9alKUtU8G5er9fbJn+16VcZWKzK15dZIOJUqjS5724n0dXZv1kkHFm4t1tdZF4VsYN68igYa89rkooH1i3CgMS+1YGLRyAe2iY3YF9VVG4VAYzaVVKG9qgQac7UygUWtFGhMLfM9td/UCrciH2JxUws05ibxIcbPioXPsUBhpvND+tsm8x/oGsVAYxr/69O0VC0s/e8y8rtq4d3/0i1ZqRauEu+Fqj+lIj+mFFJIYZCF+8UXHorpNpTzLFxV9jjVydxMC5OosLfTsgvbbWX2fYqd84wL2zV79vW07MKusRz7JGDmhe3OJHsft4GefWHbaD/GPBAIoLBrvA8/Mg+isN1jJoehjYEURi5OBy5vQynsnn1En8su7BqbAUu5kArbRnvsvZQLq7Bdytm651IutMLHcrXXUi68wu6llXOPLXKIhe3HePn/1WqAha7f7ji4wvZfRr8TjsAKXXXp+28/qEIX5/3/VkiFST7kGU84hYkdtr0IpTCvhm4RwyjMs+Hb/BAKxx3VzL8wteOO2+ZemGZ91qDhFRZ2/JHwnAuLrO9eMKxCZ+tJXuyfa6GzQ85kAirMem4gwiuc8NH/PAunRCGFFFJIIYUUUjiJ5KBaePD/nnf+oVr47v9dfeV5i7P/eQt3US10AjPdmdyQ+p/2EuN58aC3RCYiMrumOn/4Q2SIdPEzpFHxU61QaA5Yb5b7U2iWW20efyc2j7/8OxWU7sW4yV79cVz43SbtFzURvp8mFr6f5nHH0JQTW3+3/5K/Yyh6PM6dZtLnX05nxbuwqvJwPXm86+t0PZS20r3QLKl8XthWKd/XBgAAAAAAAAAAAAAAAAAAAAAAAAAAAMCLX5oDQy1QqyoNAAAAAElFTkSuQmCC);;
+
+        }
+        .chromeIcon{
+            background-image: url(https://e1.pngegg.com/pngimages/791/273/png-clipart-macos-app-icons-google-chrome.png);
+
+        }
+        .instIcon{
+            background-image: url(https://www.alltechbuzz.net/wp-content/uploads/2019/09/57e6d2464c55ac14ea898579ce203e7c1d22dfe05558774075277dd2_640.png);
+        }
+        .iconClose{
+            background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAVFBMVEX///8AAAAwMDCtra2wsLCqqqpGRkaysrL7+/s6OjpJSUn29vZDQ0Pz8/MmJia+vr6KiopaWlo1NTVUVFTW1tYLCwvFxcW/v78tLS3b29tPT0+4uLh1ky1qAAAE6klEQVR4nO2d7WKiMBBFUVuFoquuH7X1/d9z61pXpQRmMsPM6N7zPzSnuSGYhFAUAAAAAAAAAAAAAAAAAAAAj8ZiudpU4whUm9Vyoe63/BzFYrpU9TuOvYVaOBzV/BZrb5kEa6WsbnfeJkl2Ww3BvbdGJ3u54NbboQdxKy7iRvTMTtoXo95krqxlgkfv+hOQDRoH7+oTGEsEl961JyF5unnzrjyJt3zBhXfdieTfTh8jpJKYrryrTmSVbbjxrjqRTbZh5V11IlW2YcRfhW3kj4gwjAIMYRgfGMIwPjCEYXxgCMP4wBCG8YGhpuEvhfryr2FoOFVYypnxZ9rtDOd1Ubxwq9dgUhT1nFnGzHBcngrJFCenS5S/mX/YyHBenkvNeNW7Y3a+RDlllTIynNaXYvmKk8slalZftDGs6mu53KBOrpcoOfPtJoZVeVswrxUnt5fgKFoYTuv7kjmKs/tLlPSgGhjO62ZRflAnzUvU5NvN8Ibj8mdZruIPQcagMbjhvEWQG9SXtkuUxKF/aMNmH8xRbBUkDxoDG/5KFqcHtSWi35Aew4duw8T/n6GYFqTlYPB++Cqs4CxZfkKrwPD3UpliugWJghbjYbqS/UGVRtTGUFDNdC+mtqDRc2luUMV90MywQ7ErqPI+aGeY1RcV+qChYUZQVSJqaMhW1LjJ2BoygyoZYrwMWZXWEzSd86YHVasPWhuSBw2dYcLDkBg+xYiaG5KCqnYXdTEkKCoL2q8f9kVQtQ+6GPYoKj2quRp2BlVzmPAz7GinD31Bn3X8tGIKwbqjz04FrqJkYdVpL0a6L7aRH1E/Q5aiSNBvPw09qMLtDX47hqitKGtB1z1RNEWpoOuuL0pQpTtwnPe19SvKBZ137vUFVRzRkbdhj6KGoLdhZ1AVIjryNxylH7Y/dP6At2H655JsD9wVZ8Puu6lKTH0N+4YLDUVXw/Sk0wWFoHoa9gtqKDoa0n5diIPqZ0j9+SRVdDPsGibuEQbVy5AzUyNrRSdD3lSUSNHHkHIXvUUSVBdDeh9UUMSc9wCGXUszuoujTobdiy/SzZoBDPsWQNUVrQ37Y6gdVGNDSvWVF0ltDWkLoLpBNTWkrtHnbdYMYEjvYZp90dCQs41EMah2hrx9MnqKZobc4KkF1cqQX2EtRSPDnH0ySkG1MczbyqWjaGKY+5SiElTfd2b6fvVpPMAZGEr2qikEdXhD2XZK+QPc4IbSviTui0MbyrdTpluRdhiM23vA9KmltGKI94BT73JznksSQY3xLnfqfXzeg1erYpT38dvPVODOfrYENc6ZCm3nYvCnd38oRjoXQ+dsk0ZQY51t0jyfJm+C/q4Vo51Pc3/GUO4KxI1ivDOGboOav8QS+pwonbO+vhVjnvV1GTRkuw3/BjXqeW3nQUO6nfI18pl7p3MT5dt/XiKfm/gfnH3pBAxhGB8YwjA+MIRhfGAIw/jAEIbxgSEM45Nv+Pzfkn3+7wE//zedH+W73O/Zhs//bXX+7LMLn/mCDxLT/I/Hf3Hwrj2B/NHwhPwDVcMjasKiWHvXv5e1TLBY7LwNetgJbqRntt4KPWylgkWx93boZC8X/GrFuEHdKbTgiUXU281a3Af/cWRujjDhIBwmGiw/vYUaTHX9TizeV5tqHIFqs3rXyycAAAAAAAAAAAAAAAAAAIAVfwC8Q3BWqvB2kwAAAABJRU5ErkJggg==);
+        }
+
+        .close{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background:black;
+            border:1px solid white;
+            border-radius: 50%;
+            top: 5px;
+            left: 5px;
+            color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family:'Courier New', Courier, monospace;
+            cursor: default;
+            -webkit-user-select: none;
+            transition:all .5s ease;
+            display: none; 
+        }
+        .close:hover{
+            transform: scale(1.1);
+            transition:all .5s ease;
+        }
+        @keyframes temble{
+            0%, 100%{
+                transform:rotateZ(-10deg)
+            }
+        
+            25%{
+                transform:rotateZ(0deg)
+            }
+            50%{
+                transform:rotateZ(10deg)
+            }
+
+            75%{
+                transform:rotateZ(0deg)
+            }
+
+        
+
+        }
+
+        </style>
+</head>
+<body>
+    <div id="contenido">
+
+        <div id="form">
+            <div class="form-item faceIcon" style="--i:.5s">
+                <div class="close">x</div>
+            </div>
+            <div class="form-item youtubeIcon" style="--i:.6s">
+                <div class="close">x</div></div>
+            <div class="form-item chromeIcon" style="--i:.7s">
+                <div class="close">x</div>
+            </div>
+            <div class="form-item instIcon" style="--i:.65s">
+                <div class="close">x</div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
